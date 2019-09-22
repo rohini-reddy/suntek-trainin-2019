@@ -1,0 +1,83 @@
+#include<stdio.h>
+
+
+char* reverseCon(char* str)
+
+{
+    
+char *pc1, *pc2;
+   
+ int i;
+ 
+   pc1 = &str[0];
+  
+  for(i=0; str[i]!='\0';++i)
+  
+     
+    pc2 = &str[i-1];
+
+    while(pc1!=pc2)
+  
+  {
+     
+ if((*pc1!='a')||(*pc1!='e')||(*pc1!='i')||(*pc1!='o')||(*pc1!='u'))
+    
+  {
+    
+    while(pc2!=pc1)
+     
+   {
+         
+   if((*pc2!='a')||(*pc2!='e')||(*pc2!='i')||(*pc2!='o')||(*pc2!='u'))
+       
+     {
+          
+    char temp;
+          
+    temp = *pc1;
+       
+       *pc1 = *pc2;
+        
+      *pc2 = temp;
+
+              ++pc2;
+      
+        break;
+       
+     }
+        
+    else
+          
+    ++pc2;
+        }
+ 
+       ++pc1;
+      }
+   
+   else
+        
+++pc1;
+   
+ }
+    
+  
+  return NULL;
+
+}
+
+int main()
+
+{
+   
+ char string[20], *pstr;
+    
+scanf("%s", string);
+
+
+    reverseCon(string);
+   
+ printf("%s", string);
+    
+return 0;
+
+}
